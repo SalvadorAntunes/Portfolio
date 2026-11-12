@@ -5,378 +5,314 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Salvador Lourenço Antunes · Portfolio</title>
   <meta name="description" content="Salvador Lourenço Antunes, final-year Computer Science and Engineering student at NOVA SST in Lisbon. Experience, projects, studies and life outside the code.">
-  <meta name="theme-color" content="#05070f">
   <meta property="og:title" content="Salvador Lourenço Antunes · Portfolio">
   <meta property="og:description" content="Final-year Computer Science and Engineering student at NOVA SST in Lisbon. Experience, projects, studies and life outside the code.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232f7bff'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='white'%3ESA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151515'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' text-anchor='middle' fill='white'%3ESA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    // Apply a saved light/dark choice before the page paints.
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
 </head>
-<body>
-
-<!-- Icon sprite -->
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
-  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></g></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></symbol>
-  <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
-</svg>
+<body id="top">
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav" id="top">
-  <div class="nav-inner">
-    <a class="brand" href="#top">Salvador Lourenço Antunes</a>
-    <nav class="nav-links" id="nav-links" aria-label="Sections">
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="site-name" href="#top">Salvador Antunes</a>
+    <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#hackathons">Hackathons</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
-      <a href="#beyond">Beyond code</a>
+      <a href="#beyond">Outside code</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-primary btn-sm nav-cta" href="#contact">Get in touch</a>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-      <svg width="22" height="22" aria-hidden="true"><use href="#i-menu"/></svg>
-    </button>
+    <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
   </div>
 </header>
 
-<main id="main">
+<main class="wrap" id="main">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero container">
-    <div class="hero-text">
-      <span class="pill"><span class="dot"></span>Open to internships</span>
-      <h1>
-        <span class="h1-light">Hi! I'm Salvador Lourenço Antunes,</span>
-        <span class="h1-bold">turning ideas into working software.</span>
-      </h1>
-      <p class="lead">Final-year Computer Science and Engineering student at NOVA School of Science and Technology in Lisbon. Interested in software engineering, AI and backend development, and always building something to learn the next thing.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Let's connect</a>
-        <a class="btn btn-ghost" href="#experience">See my work</a>
-        <a class="btn btn-link" href="assets/CV_Salvador_Antunes.pdf" download>
-          <svg width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>Download CV
-        </a>
-      </div>
+  <!-- ============ INTRO ============ -->
+  <section class="intro">
+    <div>
+      <h1>Salvador Lourenço Antunes</h1>
+      <p class="intro-lead">I'm a final-year Computer Science and Engineering student at NOVA School of Science and Technology, in Lisbon. I'm interested in software engineering, AI and backend development. Last summer I interned at NTT DATA, and I'm open to internships.</p>
+      <p class="intro-links">
+        <a href="mailto:salvadorantunes06@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/salvadornlantunes/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/SalvadorAntunes" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="assets/CV_Salvador_Antunes.pdf" download>CV (PDF) ↓</a>
+      </p>
     </div>
-
-    <div class="portrait">
-      <div class="portrait-glow" aria-hidden="true"></div>
-      <img class="portrait-img" src="assets/img/me.jpg" width="840" height="1050" alt="Salvador Lourenço Antunes smiling at sunset, hills in the background">
-      <ul class="chips" aria-label="Highlights">
-        <li class="chip chip-a"><strong>16.12<small>/20</small></strong><span>GPA at NOVA SST</span></li>
-        <li class="chip chip-b"><strong>3</strong><span>Hackathons</span></li>
-        <li class="chip chip-c"><strong>5 seasons</strong><span>Rugby Player</span></li>
-        <li class="chip chip-d"><strong>NTT DATA</strong><span>Summer intern 2026</span></li>
-      </ul>
-    </div>
+    <img class="intro-photo" src="assets/img/me.jpg" width="840" height="1050" alt="Salvador Lourenço Antunes smiling at sunset, hills in the background">
   </section>
 
+  <dl class="strip">
+    <div><dt>GPA</dt><dd>16.12 / 20</dd></div>
+    <div><dt>Internship</dt><dd>NTT DATA Portugal, summer 2026</dd></div>
+    <div><dt>Hackathons</dt><dd>SKYHACK Top 10 finalist</dd></div>
+    <div><dt>Rugby</dt><dd>Four seasons at Sporting CP</dd></div>
+  </dl>
+
   <!-- ============ ABOUT ============ -->
-  <section class="section container" id="about">
-    <header class="section-head reveal">
-      <span class="eyebrow">About</span>
-      <h2>A bit about me</h2>
-    </header>
-
-    <div class="about-grid">
-      <article class="card about-bio reveal">
-        <p>I'm in the final year of my BSc in Computer Science and Engineering at NOVA School of Science and Technology, and I live in Vila Franca de Xira, just outside Lisbon. What I enjoy most is taking an idea and turning it into something that actually works, whether that's a university assignment, a side project or a weekend hackathon.</p>
-        <p>Last summer I interned at NTT DATA Portugal, looking into how generative AI can speed up enterprise development. A master's in Computer Science comes next. I'm still deciding between AI/ML and software engineering, so for now I'm doing plenty of both.</p>
-        <p>Away from the laptop I play rugby, work out and volunteer when I can. <a href="#beyond">More on that below.</a></p>
-      </article>
-
-      <aside class="card facts reveal">
-        <dl>
+  <section class="sec" id="about">
+    <div class="sec-label"><h2>About</h2></div>
+    <div class="sec-body">
+      <div class="about">
+        <div class="about-bio">
+          <p>I'm in the final year of my BSc in Computer Science and Engineering at NOVA School of Science and Technology, and I live in Vila Franca de Xira, just outside Lisbon. What I enjoy most is taking an idea and turning it into something that actually works, whether that's a university assignment, a side project or a weekend hackathon.</p>
+          <p>Last summer I interned at NTT DATA Portugal, looking into how generative AI can speed up enterprise development. A master's in Computer Science comes next. I'm still deciding between AI/ML and software engineering, so for now I'm doing plenty of both.</p>
+          <p>Away from the laptop I play rugby, work out and volunteer when I can. <a href="#beyond">More on that below.</a></p>
+        </div>
+        <dl class="facts">
           <div><dt>Based in</dt><dd>Vila Franca de Xira, Lisbon, Portugal</dd></div>
           <div><dt>Studying</dt><dd>BSc Computer Science and Engineering, NOVA School of Science and Technology</dd></div>
           <div><dt>Languages</dt><dd>Portuguese (native), English (C1)</dd></div>
           <div><dt>Looking for</dt><dd>Internships and collaborative projects</dd></div>
         </dl>
-      </aside>
+      </div>
 
-      <article class="card stack reveal">
-        <h3>Tech I work with</h3>
-        <div class="stack-groups">
-          <div>
-            <h4>Languages</h4>
-            <ul class="tags"><li>Java</li><li>C</li><li>C#</li><li>Python</li><li>SQL</li><li>JavaScript</li><li>OCaml</li><li>Prolog</li><li>Assembly</li><li>HTML</li></ul>
-          </div>
-          <div>
-            <h4>Backend, APIs &amp; databases</h4>
-            <ul class="tags"><li>.NET</li><li>REST APIs</li><li>LINQ</li><li>SQL Server</li><li>Oracle APEX</li><li>XML</li><li>Postman</li></ul>
-          </div>
-          <div>
-            <h4>AI &amp; LLM tools</h4>
-            <ul class="tags"><li>Google Gemini API</li><li>ElevenLabs API</li><li>Cursor</li><li>GitHub Copilot</li><li>Lovable</li></ul>
-          </div>
-          <div>
-            <h4>Cloud &amp; dev tools</h4>
-            <ul class="tags"><li>Microsoft Azure</li><li>Vercel</li><li>Appian</li><li>Git &amp; GitHub</li><li>WebGL</li></ul>
-          </div>
-        </div>
-      </article>
+      <h3 class="sub">Skills</h3>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Java, C, C#, Python, SQL, JavaScript, OCaml, Prolog, Assembly, HTML</dd></div>
+        <div><dt>Backend, APIs &amp; databases</dt><dd>.NET, REST APIs, LINQ, SQL Server, Oracle APEX, XML, Postman</dd></div>
+        <div><dt>AI &amp; LLM tools</dt><dd>Google Gemini API, ElevenLabs API, Cursor, GitHub Copilot, Lovable</dd></div>
+        <div><dt>Cloud &amp; dev tools</dt><dd>Microsoft Azure, Vercel, Appian, Git &amp; GitHub, WebGL</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section class="section container" id="experience">
-    <header class="section-head reveal">
-      <span class="eyebrow">Experience</span>
-      <h2>Where I've worked</h2>
-    </header>
+  <section class="sec" id="experience">
+    <div class="sec-label"><h2>Experience</h2></div>
+    <div class="sec-body">
+      <h3>Summer Intern, Enterprise Optimization</h3>
+      <p class="meta">NTT DATA Portugal · Jul – Aug 2026 · Lisbon</p>
+      <ul class="list">
+        <li>Researched generative AI applications for Appian development, using tools such as MCP servers and AI agents.</li>
+        <li>Wrote technical documentation on AI-assisted development that sped up onboarding for the Enterprise Optimization team.</li>
+      </ul>
+      <p class="meta stack-line">Generative AI · AI agents · MCP servers · Appian</p>
 
-    <article class="card exp reveal">
-      <div class="exp-body">
-        <p class="meta">Jul 2026 – Aug 2026 · Lisbon</p>
-        <h3>Summer Intern, Enterprise Optimization</h3>
-        <p class="org">NTT DATA Portugal</p>
-        <ul class="bullets">
-          <li>Researched generative AI applications for Appian development, using tools such as MCP servers and AI agents.</li>
-          <li>Wrote technical documentation on AI-assisted development that sped up onboarding for the Enterprise Optimization team.</li>
-        </ul>
-        <ul class="tags"><li>Generative AI</li><li>AI agents</li><li>MCP servers</li><li>Appian</li></ul>
-      </div>
-      <div class="exp-photos">
-        <figure class="photo photo-tall">
-          <img src="assets/img/ntt-internship.jpg" width="1070" height="1400" loading="lazy" alt="Salvador holding his internship certificate at NTT DATA's Summer Internships 2026 closing session">
-          <figcaption>Last day, certificate in hand</figcaption>
+      <div class="photos">
+        <figure>
+          <div class="frame zoom"><img src="assets/img/ntt-internship.jpg" width="1070" height="1400" loading="lazy" alt="Salvador holding his internship certificate at NTT DATA's Summer Internships 2026 closing session"></div>
+          <figcaption>Last day, certificate in hand.</figcaption>
         </figure>
-        <figure class="photo photo-wide">
-          <img src="assets/img/ntt-surf.jpg" width="1400" height="933" loading="lazy" alt="Salvador riding a wave on a red surfboard">
-          <figcaption>The internship came with a surf class</figcaption>
+        <figure>
+          <div class="frame"><img src="assets/img/ntt-surf.jpg" width="1400" height="933" loading="lazy" alt="Salvador riding a wave on a red surfboard"></div>
+          <figcaption>The internship came with a surf class.</figcaption>
         </figure>
       </div>
-    </article>
+    </div>
   </section>
 
   <!-- ============ HACKATHONS ============ -->
-  <section class="section container" id="hackathons">
-    <header class="section-head reveal">
-      <span class="eyebrow">Hackathons</span>
-      <h2>My new addiction</h2>
-      <p>Three so far. Small teams, very little sleep, and a working demo at the end of each one.</p>
-    </header>
+  <section class="sec" id="hackathons">
+    <div class="sec-label"><h2>Hackathons</h2></div>
+    <div class="sec-body">
+      <p class="sec-intro"><strong>My new addiction.</strong> Three so far. Small teams, very little sleep, and a working demo at the end of each one.</p>
 
-    <div class="hacks">
-
-      <article class="card hack reveal">
-        <figure class="hack-media">
+      <article class="hack">
+        <figure>
           <img src="assets/img/skyhack.jpg" width="800" height="450" loading="lazy" alt="Group photo of all SKYHACK participants in front of a screen reading Thank you">
         </figure>
         <div class="hack-body">
-          <p class="meta">SKYHACK by LX Launch <span class="badge">Top 10 finalist</span></p>
+          <p class="meta">SKYHACK by LX Launch · <span class="flag">Top 10 finalist</span></p>
           <h3>SoftLanding</h3>
           <p>An AI-powered web app that supports people dealing with anxiety while they wait for medical test results.</p>
-          <ul class="bullets">
+          <ul class="list">
             <li>Built and deployed a working prototype as a team of three, using Cursor and Vercel.</li>
             <li>Integrated ElevenLabs speech-to-text and text-to-speech so users can simply talk to it.</li>
             <li>Selected among the top 10 teams and pitched the full solution to the jury.</li>
           </ul>
-          <ul class="tags"><li>TypeScript</li><li>ElevenLabs API</li><li>Cursor</li><li>Vercel</li></ul>
-          <div class="links">
-            <a href="https://github.com/beatrizcmguerreiro/SoftLanding" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>Repository</a>
-            <a href="https://soft-landing-jv1ih6rxo-beatrizcmguerreiro.vercel.app/" target="_blank" rel="noopener">Live demo<svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
+          <p class="meta stack-line">TypeScript · ElevenLabs API · Cursor · Vercel</p>
+          <p class="links">
+            <a href="https://github.com/beatrizcmguerreiro/SoftLanding" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://soft-landing-jv1ih6rxo-beatrizcmguerreiro.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a>
+          </p>
         </div>
       </article>
 
-      <article class="card hack hack-flip reveal">
-        <figure class="hack-media">
+      <article class="hack hack-flip">
+        <figure>
           <img src="assets/img/junctionx.jpg" width="1400" height="1050" loading="lazy" style="object-position: 62% 60%" alt="Salvador and two teammates standing in front of the JunctionX Lisbon screen at IST Taguspark">
         </figure>
         <div class="hack-body">
-          <p class="meta">JunctionX Lisbon 2026 · NOS challenge <span class="badge">0.982 F1-score</span></p>
+          <p class="meta">JunctionX Lisbon 2026 · NOS challenge · <span class="flag">0.982 F1-score</span></p>
           <h3>The *-Files</h3>
           <p>36 hours at Instituto Superior Técnico, Taguspark, anonymising Portuguese medical reports while keeping their structure and meaning intact.</p>
-          <ul class="bullets">
+          <ul class="list">
             <li>Built a Python and Google Gemini pipeline that masks sensitive data in medical reports.</li>
             <li>Designed a multi-stage LLM architecture, kept separate from the deterministic text masking.</li>
             <li>Set up an automated evaluation loop on AI-generated synthetic data, reaching a 0.982 F1-score.</li>
             <li>Built a web app to show the whole pipeline end to end in the final pitch.</li>
           </ul>
-          <ul class="tags"><li>Python</li><li>Google Gemini API</li><li>PyMuPDF</li><li>Lovable</li></ul>
-          <div class="links">
-            <a href="https://github.com/SalvadorAntunes/nos-gen-ai-hackathon" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>Repository</a>
-            <a href="https://nfcjunction.lovable.app" target="_blank" rel="noopener">Live demo<svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
+          <p class="meta stack-line">Python · Google Gemini API · PyMuPDF · Lovable</p>
+          <p class="links">
+            <a href="https://github.com/SalvadorAntunes/nos-gen-ai-hackathon" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://nfcjunction.lovable.app" target="_blank" rel="noopener">Live demo ↗</a>
+          </p>
         </div>
       </article>
 
-      <article class="card hack reveal">
-        <figure class="hack-media">
+      <article class="hack">
+        <figure>
           <img src="assets/img/ainnovation.jpg" width="1050" height="1400" loading="lazy" style="object-position: 50% 36%" alt="Salvador with four teammates in front of the AInnovation hackathon screen">
         </figure>
         <div class="hack-body">
           <p class="meta">Hackathon AInnovation · Caixa Geral de Depósitos × NTT DATA</p>
           <h3>Product Discovery Agent</h3>
           <p>An AI agent that turns unstructured IT support feedback into three evidence-based product concepts.</p>
-          <ul class="bullets">
+          <ul class="list">
             <li>Thematic grouping, noise filtering and contradiction detection, with every concept traceable to the comments behind it.</li>
             <li>A weighted prioritisation framework based on customer value, feasibility and risk.</li>
             <li>Recommendations come with low-cost validation experiments, testable hypotheses and success criteria.</li>
           </ul>
-          <ul class="tags"><li>Python</li><li>Google Gemini API</li><li>Lovable</li></ul>
-          <div class="links">
-            <a href="https://radarit-ainnovation.lovable.app" target="_blank" rel="noopener">Live demo<svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
+          <p class="meta stack-line">Python · Google Gemini API · Lovable</p>
+          <p class="links">
+            <a href="https://radarit-ainnovation.lovable.app" target="_blank" rel="noopener">Live demo ↗</a>
+          </p>
         </div>
       </article>
 
+      <aside class="event">
+        <img src="assets/img/websummit.jpg" width="1050" height="1400" loading="lazy" alt="Salvador standing in front of the Web Summit sign in Lisbon">
+        <div>
+          <p class="meta">Also spotted at</p>
+          <h3>Web Summit 2026, Lisbon</h3>
+          <p>Not a hackathon, but too good to skip when it happens in your own city.</p>
+        </div>
+      </aside>
     </div>
-
-    <aside class="card event reveal">
-      <img src="assets/img/websummit.jpg" width="1050" height="1400" loading="lazy" alt="Salvador standing in front of the Web Summit sign in Lisbon">
-      <div>
-        <p class="meta">Also spotted at</p>
-        <h3>Web Summit 2026, Lisbon</h3>
-        <p>Not a hackathon, but too good to skip when it happens in your own city.</p>
-      </div>
-    </aside>
   </section>
 
   <!-- ============ PROJECTS ============ -->
-  <section class="section container" id="projects">
-    <header class="section-head reveal">
-      <span class="eyebrow">Projects</span>
-      <h2>Other things I've built</h2>
-    </header>
+  <section class="sec" id="projects">
+    <div class="sec-label"><h2>Projects</h2></div>
+    <div class="sec-body">
 
-    <div class="projects">
-      <article class="card project reveal">
-        <p class="meta">Java</p>
-        <h3>Student Manager App</h3>
-        <p>A console app that helps teachers manage students, subjects and grades. Object-oriented design with interfaces and abstract classes, custom data structures, sorting and filtering, custom exceptions, and persistence through Java serialization.</p>
-        <div class="links">
-          <a href="https://github.com/SalvadorAntunes/Student-Manager-App" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>Repository</a>
+      <article class="proj">
+        <div>
+          <h3>Student Manager App</h3>
+          <p class="meta">Java</p>
+        </div>
+        <div>
+          <p>A console app that helps teachers manage students, subjects and grades. Object-oriented design with interfaces and abstract classes, custom data structures, sorting and filtering, custom exceptions, and persistence through Java serialization.</p>
+          <p class="links"><a href="https://github.com/SalvadorAntunes/Student-Manager-App" target="_blank" rel="noopener">Repository ↗</a></p>
         </div>
       </article>
 
-      <article class="card project reveal">
-        <p class="meta">C# · .NET · SQL</p>
-        <h3>Simple Social Media API</h3>
-        <p>A small REST API for a social network, written in C# on .NET with a SQL database behind it. My playground for backend work.</p>
-        <div class="links">
-          <a href="https://github.com/SalvadorAntunes/Simple-Social-Media-API" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>Repository</a>
+      <article class="proj">
+        <div>
+          <h3>Simple Social Media API</h3>
+          <p class="meta">C# · .NET · SQL</p>
+        </div>
+        <div>
+          <p>A small REST API for a social network, written in C# on .NET with a SQL database behind it.</p>
+          <p class="links"><a href="https://github.com/SalvadorAntunes/Simple-Social-Media-API" target="_blank" rel="noopener">Repository ↗</a></p>
         </div>
       </article>
 
-      <article class="card project reveal">
-        <p class="meta">Java</p>
-        <h3>Blackjack Game</h3>
-        <p>Command-line Blackjack with hit and stand, blackjack detection and bust conditions, multiple players and score tracking across the session. Players, cards, hands and game logic are all modelled as objects.</p>
-        <div class="links">
-          <a href="https://github.com/SalvadorAntunes/Blackjack-Game" target="_blank" rel="noopener"><svg width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>Repository</a>
+      <article class="proj">
+        <div>
+          <h3>Blackjack Game</h3>
+          <p class="meta">Java</p>
+        </div>
+        <div>
+          <p>Command-line Blackjack with hit and stand, blackjack detection and bust conditions, multiple players and score tracking across the session. Players, cards, hands and game logic are all modelled as objects.</p>
+          <p class="links"><a href="https://github.com/SalvadorAntunes/Blackjack-Game" target="_blank" rel="noopener">Repository ↗</a></p>
         </div>
       </article>
 
-      <article class="card project project-wide reveal">
-        <img src="assets/img/pc-build.jpg" width="480" height="360" loading="lazy" alt="The desktop PC Salvador built, side panel open, lit by RGB fans">
-        <div class="project-body">
-          <p class="meta">Hardware</p>
+      <article class="proj">
+        <div>
           <h3>Desktop PC build</h3>
+          <p class="meta">Hardware</p>
+        </div>
+        <div>
           <p>Picked compatible parts (CPU, motherboard, RAM, GPU, PSU), assembled the machine, configured BIOS/UEFI, installed Windows and drivers, and troubleshot the boot and stability issues that showed up along the way.</p>
-          <p class="aside">Fun fact: I built it back in 2022, when I was just 15 years old.</p>
+          <p class="note">Fun fact: I built it back in 2022, when I was 15.</p>
+          <img class="proj-photo" src="assets/img/pc-build.jpg" width="480" height="360" loading="lazy" alt="The desktop PC Salvador built, side panel open, lit by RGB fans">
         </div>
       </article>
+
     </div>
   </section>
 
   <!-- ============ EDUCATION ============ -->
-  <section class="section container" id="education">
-    <header class="section-head reveal">
-      <span class="eyebrow">Education</span>
-      <h2>The academic side</h2>
-    </header>
+  <section class="sec" id="education">
+    <div class="sec-label"><h2>Education</h2></div>
+    <div class="sec-body">
+      <h3>BSc Computer Science and Engineering</h3>
+      <p class="meta">NOVA School of Science and Technology · 2024 – 2027</p>
 
-    <div class="edu-grid">
-      <article class="card edu reveal">
-        <p class="meta">2024 – 2027</p>
-        <h3>BSc Computer Science and Engineering</h3>
-        <p class="org">NOVA School of Science and Technology</p>
-        <ul class="stats">
-          <li><strong>16.12<small>/20</small></strong><span>Current GPA</span></li>
-          <li><strong>18<small>/18</small></strong><span>Courses passed, none failed</span></li>
-          <li><strong>120</strong><span>ECTS completed</span></li>
-        </ul>
-      </article>
+      <dl class="stats">
+        <div><dd>16.12<small> / 20</small></dd><dt>Current GPA</dt></div>
+        <div><dd>18<small> / 18</small></dd><dt>Courses passed, none failed</dt></div>
+        <div><dd>120</dd><dt>ECTS completed</dt></div>
+      </dl>
 
-      <article class="card grades reveal">
-        <h3>Top grades</h3>
-        <ul class="grade-list">
-          <li><span>Probability &amp; Statistics</span><i style="--v:95%"></i><b>19</b></li>
-          <li><span>Object-Oriented Programming</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Programming Languages &amp; Environments</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Introduction to Programming</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Computational Logic</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Discrete Mathematics</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Physics</span><i style="--v:90%"></i><b>18</b></li>
-          <li><span>Databases</span><i style="--v:85%"></i><b>17</b></li>
-        </ul>
-        <p class="fine">Grades out of 20, on the Portuguese scale.</p>
-      </article>
-    </div>
+      <h3 class="sub">Top grades <span>out of 20</span></h3>
+      <ul class="grades">
+        <li><span>Probability &amp; Statistics</span><b>19</b></li>
+        <li><span>Object-Oriented Programming</span><b>18</b></li>
+        <li><span>Programming Languages &amp; Environments</span><b>18</b></li>
+        <li><span>Introduction to Programming</span><b>18</b></li>
+        <li><span>Computational Logic</span><b>18</b></li>
+        <li><span>Discrete Mathematics</span><b>18</b></li>
+        <li><span>Physics</span><b>18</b></li>
+        <li><span>Databases</span><b>17</b></li>
+      </ul>
 
-    <div class="certs reveal">
-      <a class="card cert" href="https://www.credly.com/badges/c9b85ed4-5a7e-40a7-b54f-6108fac54eef/public_url" target="_blank" rel="noopener">
-        <span class="meta">Certification</span>
-        <strong>Google AI Essentials</strong>
-        <span class="cert-go">View credential<svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-      </a>
-      <a class="card cert" href="https://www.linkedin.com/learning/certificates/c88a4005c4e2d7a7b81165ea8343f370a46b09a5a9ec32a91beae1333af32900" target="_blank" rel="noopener">
-        <span class="meta">Certification</span>
-        <strong>Career Essentials in Generative AI</strong>
-        <span class="cert-go">Microsoft &amp; LinkedIn<svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-      </a>
-      <a class="card cert" href="https://cert.efset.org/en/JGTdqV" target="_blank" rel="noopener">
-        <span class="meta">English</span>
-        <strong>EF SET Certificate, C1</strong>
-        <span class="cert-go">View certificate<svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-      </a>
-      <div class="card cert">
-        <span class="meta">English</span>
-        <strong>First Certificate in English</strong>
-        <span class="cert-go">Cambridge</span>
-      </div>
+      <h3 class="sub">Certifications</h3>
+      <ul class="certs">
+        <li><a href="https://www.credly.com/badges/c9b85ed4-5a7e-40a7-b54f-6108fac54eef/public_url" target="_blank" rel="noopener">Google AI Essentials ↗</a><span>Google</span></li>
+        <li><a href="https://www.linkedin.com/learning/certificates/c88a4005c4e2d7a7b81165ea8343f370a46b09a5a9ec32a91beae1333af32900" target="_blank" rel="noopener">Career Essentials in Generative AI ↗</a><span>Microsoft &amp; LinkedIn</span></li>
+        <li><a href="https://cert.efset.org/en/JGTdqV" target="_blank" rel="noopener">EF SET English Certificate, C1 ↗</a><span>EF</span></li>
+        <li><span class="plain">First Certificate in English</span><span>Cambridge</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ============ BEYOND CODE ============ -->
-  <section class="section container" id="beyond">
-    <header class="section-head reveal">
-      <span class="eyebrow">Beyond code</span>
-      <h2>Life away from the laptop</h2>
-    </header>
+  <!-- ============ OUTSIDE OF CODE ============ -->
+  <section class="sec" id="beyond">
+    <div class="sec-label"><h2>Outside of code</h2></div>
+    <div class="sec-body">
 
-    <div class="beyond-grid">
-      <article class="card life life-rugby reveal">
-        <figure class="life-media">
+      <article class="out">
+        <figure>
           <img src="assets/img/rugby.jpg" width="702" height="509" loading="lazy" alt="Salvador at scrum-half in Sporting CP's green and white, waiting to feed the scrum">
+          <figcaption>Scrum-half for Sporting CP. I'm the one on the left.</figcaption>
         </figure>
-        <div class="life-body">
-          <p class="meta">Rugby · Scrum-half</p>
-          <h3>Four seasons at Sporting CP, now back for Sevens</h3>
+        <div class="out-body">
+          <h3>Rugby</h3>
           <p>I played for Sporting CP from 2019 to 2023 and returned to the sport this year with AEFCT's Sevens team at my university. Most of what I know about teamwork, discipline and getting back up, I learned on a rugby pitch.</p>
-          <p class="aside">Fun fact: I wore Sporting green for four years while being a big Benfica fan (Partner since Mar 2017, No. 192238). Rugby is the one exception.</p>
+          <p class="note">Fun fact: I wore Sporting green for four years while being a big Benfica fan. Rugby is the one exception.</p>
+          <h3 class="gap">Gym</h3>
+          <p>I love working out, and staying fit is a fixed part of my week.</p>
         </div>
       </article>
 
-      <article class="card life reveal">
-        <figure class="life-media">
-          <img src="assets/img/volunteering.jpg" width="1400" height="1050" loading="lazy" style="object-position: 60% 30%" alt="Salvador and another volunteer helping a resident at Irmãs Hospitaleiras">
+      <article class="out">
+        <figure>
+          <img src="assets/img/volunteering.jpg" width="1400" height="1050" loading="lazy" alt="Salvador and another volunteer helping a resident at Irmãs Hospitaleiras">
+          <figcaption>Volunteering at Irmãs Hospitaleiras.</figcaption>
         </figure>
-        <div class="life-body">
-          <p class="meta">Volunteering</p>
-          <h3>Giving time back</h3>
-          <ul class="plain">
+        <div class="out-body">
+          <h3>Volunteering</h3>
+          <ul class="list">
             <li>Irmãs Hospitaleiras</li>
             <li>Banco Alimentar Contra a Fome</li>
             <li>World Youth Day 2023, Lisbon</li>
@@ -384,35 +320,30 @@
         </div>
       </article>
 
-      <article class="card life life-text reveal">
-        <div class="life-body">
-          <p class="meta">Fitness</p>
-          <h3>Staying fit</h3>
-          <p>Working out is a fixed part of my week, exam season included. It's where I reset, and it keeps me sharp for everything else.</p>
-        </div>
-      </article>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section class="section container" id="contact">
-    <div class="card contact reveal">
-      <span class="eyebrow">Contact</span>
-      <h2>Let's talk</h2>
-      <p>I'm open to internships and collaborative projects. The fastest way to reach me is email or LinkedIn.</p>
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:salvadorantunes06@gmail.com"><svg width="18" height="18" aria-hidden="true"><use href="#i-mail"/></svg>salvadorantunes06@gmail.com</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/salvadornlantunes/" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
-        <a class="btn btn-ghost" href="https://github.com/SalvadorAntunes" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
-      </div>
+  <section class="sec" id="contact">
+    <div class="sec-label"><h2>Contact</h2></div>
+    <div class="sec-body">
+      <p>I'm open to internships and collaborative projects. Email is the fastest way to reach me.</p>
+      <p><a class="contact-mail" href="mailto:salvadorantunes06@gmail.com">salvadorantunes06@gmail.com</a></p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/salvadornlantunes/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/SalvadorAntunes" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="assets/CV_Salvador_Antunes.pdf" download>CV (PDF) ↓</a>
+      </p>
     </div>
   </section>
 
 </main>
 
-<footer class="footer container">
-  <span>© <span id="year">2026</span> Salvador Lourenço Antunes</span>
-  <span>Vila Franca de Xira, Lisbon, Portugal</span>
+<footer class="wrap">
+  <div class="foot">
+    <span>© 2026 Salvador Lourenço Antunes</span>
+    <span>Vila Franca de Xira, Lisbon, Portugal</span>
+  </div>
 </footer>
 
 <script src="script.js"></script>
